@@ -1,0 +1,3 @@
+CREATE DATABASE bla;
+
+USE bla;

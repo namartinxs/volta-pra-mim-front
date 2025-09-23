@@ -1,0 +1,8 @@
+CREATE DATABASE teste;
+
+USE teste;
+
+CREATE TABLE Teste (
+	id INT PRIMARY KEY AUTO_INCREMENT UNIQUE,
+    nome VARCHAR(50)
+);
