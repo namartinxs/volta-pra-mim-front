@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/router"
 import Layout from '../components/Layout';
 import api from '../services/api';
 import AvatarGrande from '../assets/avatar_large.png';
 
 export default function AdicionarItem() {
-  const navegar = useNavigate();
+  const navegar = useRouter()
+  // const navegar = useNavigate();
   const [dadosForm, setDadosForm] = useState({
     nome: '',
     descricao: '',

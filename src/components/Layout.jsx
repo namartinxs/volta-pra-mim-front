@@ -1,10 +1,12 @@
 import React from 'react';
 import { Plus } from 'lucide-react'; 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { useRouter } from "next/router"
 import AvatarImg from '../assets/avatar.png'; // Garanta que essa imagem existe
 
 export default function Layout({ children }) {
-  const navegar = useNavigate();
+  // const navegar = useNavigate();
+  const navegar = useRouter()
 
   const handleclick = (() => {
     navegar.push('/rota')
