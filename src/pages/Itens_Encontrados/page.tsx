@@ -4,8 +4,14 @@ import { MoreVertical, FileImage } from 'lucide-react';
 import Layout from '../../components/Layout';
 import api from '../../services/api';
 
+interface ItemProps {
+  _id?: string; 
+  id?: string;
+  nome: string;
+}
+
 export default function ItensEncontrados() {
-  const [itens, setItens] = useState([]);
+  const [itens, setItens] = useState<ItemProps[]>([]);
   const navegar = useNavigate();
 
   useEffect(() => {

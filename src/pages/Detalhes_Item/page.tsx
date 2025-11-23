@@ -4,10 +4,18 @@ import { ArrowLeft, FileImage, SendHorizontal } from 'lucide-react';
 import Layout from '../../components/Layout';
 import api from '../../services/api';
 
+interface ItemProps {
+  id: string;
+  nome: string;
+  descricao: string;
+  local: string;
+  status?: string;
+}
+
 export default function DetalhesItem() {
   const { id } = useParams();
   const navegar = useNavigate();
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState<ItemProps | null>(null);
   const [textoReivindicacao, setTextoReivindicacao] = useState('');
 
   useEffect(() => {
@@ -45,7 +53,7 @@ export default function DetalhesItem() {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-8 text-azulPrimary">
           <button onClick={() => navegar(-1)} className="hover:bg-blue-50 p-2 rounded-full transition"><ArrowLeft size={28} /></button>
-          <h2 className="text-2xl font-bold">Item nº {id.slice(-4)}</h2>
+          <h2 className="text-2xl font-bold">Item nº {id?.slice(-4)}</h2>
         </div>
 
         <div className="bg-white rounded-xl shadow-md p-12 flex flex-col items-center justify-center mb-8 min-h-[300px]">

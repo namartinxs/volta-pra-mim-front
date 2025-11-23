@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useRouter } from "next/router"
-import Layout from '../components/Layout';
-import api from '../services/api';
+import Layout from '../../components/Layout';
+import api from '../../services/api';
 import AvatarGrande from '../assets/avatar_large.png';
 
 export default function AdicionarItem() {
   const navegar = useRouter()
-  // const navegar = useNavigate();
   const [dadosForm, setDadosForm] = useState({
     nome: '',
     descricao: '',
@@ -15,16 +13,19 @@ export default function AdicionarItem() {
     data: ''
   });
 
-  const aoAlterar = (e) => {
+  const aoAlterar = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setDadosForm({ ...dadosForm, [e.target.name]: e.target.value });
   };
 
-  const aoEnviar = async (e) => {
+  const aoEnviar = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // POST /lost-items
       await api.post('/lost-items', dadosForm);
-      navegar('/sucesso', { state: { mensagem: 'Item adicionado\ncom sucesso!' } });
+      navegar.push({
+        pathname: '/sucesso',
+        query: { mensagem: 'Item adicionado com sucesso!' }
+      });
+      
     } catch (erro) {
       console.error(erro);
       alert('Erro ao cadastrar item.');

@@ -28,7 +28,7 @@ export default function Login() {
     };
   }, []);
 
-  const aoFazerLogin = (e) => {
+  const aoFazerLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Logando com:", email, senha);
     navegar('/encontrados');
