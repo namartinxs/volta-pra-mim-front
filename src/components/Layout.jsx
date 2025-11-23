@@ -6,6 +6,10 @@ import AvatarImg from '../assets/avatar.png'; // Garanta que essa imagem existe
 export default function Layout({ children }) {
   const navegar = useNavigate();
 
+  const handleclick = (() => {
+    navegar.push('/rota')
+  }) 
+
   return (
     <div className="min-h-screen bg-gray-50 pb-10">
       {/* Cabeçalho Azul */}

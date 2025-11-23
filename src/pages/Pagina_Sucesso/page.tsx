@@ -1,12 +1,17 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PartyPopper } from 'lucide-react';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
+
+interface LocationState {
+  mensagem?: string;
+}
 
 export default function PaginaSucesso() {
   const navegar = useNavigate();
   const location = useLocation();
-  const mensagem = location.state?.mensagem || "Operação realizada\ncom sucesso!";
+  const state = location.state as LocationState;
+  const mensagem = state?.mensagem || "Operação realizada\ncom sucesso!";
 
   return (
     <Layout>

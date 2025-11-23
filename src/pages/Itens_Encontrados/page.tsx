@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoreVertical, FileImage } from 'lucide-react';
-import Layout from '../components/Layout';
-import api from '../services/api';
+import Layout from '../../components/Layout';
+import api from '../../services/api';
 
 export default function ItensEncontrados() {
   const [itens, setItens] = useState([]);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, FileImage, SendHorizontal } from 'lucide-react';
-import Layout from '../components/Layout';
-import api from '../services/api';
+import Layout from '../../components/Layout';
+import api from '../../services/api';
 
 export default function DetalhesItem() {
   const { id } = useParams();

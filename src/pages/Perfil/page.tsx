@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 import AvatarGrande from '../assets/avatar_large.png';
 
 export default function Perfil() {
