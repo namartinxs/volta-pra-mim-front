@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Importando páginas
-import Login from './pages/Login';
+import Login from './pages/login';
 import Perfil from './pages/Perfil';
 import AdicionarItem from './pages/AdicionarItem';
 import ItensEncontrados from './pages/ItensEncontrados';
